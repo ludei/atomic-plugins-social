@@ -5,17 +5,11 @@ var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 
 gulp.task('build', function () {
-    gulp.src('src/js/cocoon_social.js')
+    return gulp.src('src/js/cocoon_social.js')
     		.pipe(jshint())
     		.pipe(jshint.reporter())
             .pipe(uglify())
-            .pipe(gulp.dest('src/cordova/common/www'));
-
-    return gulp.src('src/js/cocoon_gamecenter.js')
-            .pipe(jshint())
-            .pipe(jshint.reporter())
-            .pipe(uglify())
-            .pipe(gulp.dest('src/cordova/ios/gamecenter/www'));
+            .pipe(gulp.dest('src/cordova/www'));
 });
 gulp.task('doc', ["build"], function() {
 
