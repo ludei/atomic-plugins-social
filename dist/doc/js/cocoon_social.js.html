@@ -57,7 +57,7 @@
 <div class="container-fluid">
 	<div class="navbar navbar-fixed-top navbar-inverse">
 		<div class="navbar-inner">
-			<a class="brand" href="index.html"><img src='img/logomini.png' style='width: 100px;height: 35px;'/> <span class='brand-adjust'>Cocoon Common JavaScript Documentation</span></a>
+			<a class="brand" href="index.html"><img src='img/logomini.png' style='width: 100px;height: 35px;'/> <span class='brand-adjust'>Social JavaScript Documentation</span></a>
 			<ul class="nav">
 				
 				<li class="dropdown">
@@ -104,6 +104,45 @@
     <section>
         <article>
             <pre class="sunlight-highlight-javascript linenums">(function() {
+    /**
+        * @fileOverview
+        &lt;h2>About Atomic Plugins&lt;/h2>
+        &lt;p>Atomic Plugins provide an elegant and minimalist API and are designed with portability in mind from the beginning. Framework dependencies are avoided by design so the plugins can run on any platform and can be integrated with any app framework or game engine.
+        &lt;br/> &lt;p>You can contribute and help to create more awesome plugins. &lt;/p>
+        &lt;h2>Atomic Plugins for Social integration&lt;/h2>
+        &lt;p>This &lt;a src="https://github.com/ludei/atomic-plugins-social">repository&lt;/a> contains a native Share API designed using the Atomic Plugins paradigm. The API is already available in many languagues and we plan to add more in the future.&lt;/p>
+        &lt;h3>Setup your project&lt;/h3>
+        &lt;p>Releases are deployed to Cordova Plugin Registry. 
+        You only have to install the desired plugins using Cordova CLI, CocoonJS CLI or Cocoon.io Cloud Server.&lt;/p>
+        &lt;ul>
+        &lt;code>cordova plugin add com.ludei.social.ios.gamecenter;&lt;/code>&lt;br/>
+        &lt;code>cordova plugin add com.ludei.social.android.googleplaygames;&lt;/code>&lt;br/>
+        &lt;code>cordova plugin add com.ludei.social.ios.facebook;&lt;/code>&lt;br/>
+        &lt;code>cordova plugin add com.ludei.social.android.facebook;&lt;/code>&lt;br/>
+        &lt;/ul>
+        &lt;p>The following JavaScript files will be included in your html project by default during installation:&lt;/p>
+        &lt;ul>
+        &lt;li>&lt;a href="https://github.com/ludei/atomic-plugins-social/blob/master/src/js/cocoon_social.js">cocoon_social.js&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="https://github.com/ludei/cocoon-common/blob/master/src/js/cocoon.js">cocoon.js&lt;/a>&lt;/li>
+        &lt;/ul>
+        &lt;h3>Documentation&lt;/h3>
+        &lt;p>In this section you will find all the documentation you need for using this plugin in your Cordova project. 
+        Select the specific namespace below to open the relevant documentation section:&lt;/p>
+        &lt;ul>
+        &lt;li>&lt;a href="http://ludei.github.io/cocoon-common/dist/doc/js/Cocoon.html">Cocoon&lt;/a>&lt;/li>
+        &lt;li>&lt;a href="Cocoon.Social.html">Social&lt;/a>&lt;/li>
+        &lt;/ul>
+        &lt;h3>API Reference&lt;/h3>
+        &lt;p>For a complete project that tests all the features provided in the API run the following command:&lt;/p>
+        &lt;ul>&lt;code>gulp create-cordova&lt;/code>&lt;/ul>
+        &lt;br/>&lt;p>We hope you find everything you need to get going here, but if you stumble on any problems with the docs or the plugins, 
+        just drop us a line at our forum and we will do our best to help you out.&lt;/p>
+        &lt;h3>Tools&lt;/h3>
+        &lt;a href="http://support.ludei.com/hc/communities/public/topics">&lt;img src="img/cocoon-tools-1.png" />&lt;/a>
+        &lt;a href="https://cocoon.io/doc">&lt;img src="img/cocoon-tools-2.png" />&lt;/a>
+        &lt;a href="http://cocoon.io/">&lt;img src="img/cocoon-tools-3.png" />&lt;/a>
+        * @version 1.0
+        */
 
     var Cocoon = window.Cocoon;
     if (!Cocoon &amp;&amp; window.cordova &amp;&amp; typeof require !== 'undefined') {
@@ -115,8 +154,8 @@
      * Each Social service has it's own official API but can also be used within this API interface.&lt;br/>
      * Note that this javascript extension can be used to manage &lt;b>Leaderboards and Achievements.&lt;/b> &lt;br/>
      * In order to understand how to use the social javascript extension refer to the social service you would like to to use:
-     * - &lt;a href="Cocoon.Social.Facebook.html">Facebook&lt;/a>
-     * - &lt;a href="Cocoon.Social.GooglePlayGames.html">Google Play Games&lt;/a>
+     * - &lt;a href="">Facebook&lt;/a>
+     * - &lt;a href="">Google Play Games&lt;/a>
      * - &lt;a href="Cocoon.Social.GameCenter.html">Game Center&lt;/a>
      * @namespace Cocoon.Social
      */
@@ -126,8 +165,8 @@
          * This interface provides an abstraction API for all the Social Services, this is an interface and never should be call directly.
          * Each Social service has it's own official API but can also be used within this API interface. In order to use this
          * interface you should call the method getSocialInterface(); that is available in the following classes:
-         * - &lt;a href="Cocoon.Social.Facebook.html">Facebook&lt;/a>
-         * - &lt;a href="Cocoon.Social.GooglePlayGames.html">Google Play Games&lt;/a>
+         * - &lt;a href="">Facebook&lt;/a>
+         * - &lt;a href="">Google Play Games&lt;/a>
          * - &lt;a href="Cocoon.Social.GameCenter.html">Game Center&lt;/a>
          * @namespace Cocoon.Social.Interface
          * @example
@@ -370,7 +409,7 @@
              *       }
              *       else {
              *          console.log("You have " + friends.length + " friends.");
-             *        }
+             *       }
              *   });
              * }
              */
@@ -448,7 +487,7 @@
              *          if (error) {
              *              console.error("Error publishing message: " + error.message);
              *          }
-             *      });
+             *     });
              * }
              */
             publishMessageWithDialog: function(message, callback) {
@@ -942,17 +981,14 @@
          * Cocoon.Social.share("I have scored more points on Flappy Submarine!! Chooo choooo");
          */
         extension.share = function(textToShare) {
-            if (Cocoon.nativeAvailable) {
-                return Cocoon.callNative("IDTK_APP", "share", arguments, true);
-            } else {
-                // TODO: Is there something we could do to share in a browser?
-            }
+            //TODO
         };
 
         return extension;
     });
 
-})();</pre>
+})();
+</pre>
         </article>
     </section>
 
@@ -967,7 +1003,7 @@
 					
 					
 		<span class="copyright">
-		Atomic Plugins Cocoon Common - JavaScript Documentation by Ludei, DocStrap Copyright © 2012-2013 <br/> The contributors to the JSDoc3 and DocStrap projects.
+		Atomic Plugins for Social - JavaScript Documentation by Ludei, DocStrap Copyright © 2012-2013 <br/> The contributors to the JSDoc3 and DocStrap projects.
 		</span>
 					<br />
 					

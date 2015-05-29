@@ -1,4 +1,43 @@
 (function() {
+    /**
+        * @fileOverview
+        <h2>About Atomic Plugins</h2>
+        <p>Atomic Plugins provide an elegant and minimalist API and are designed with portability in mind from the beginning. Framework dependencies are avoided by design so the plugins can run on any platform and can be integrated with any app framework or game engine.
+        <br/> <p>You can contribute and help to create more awesome plugins. </p>
+        <h2>Atomic Plugins for Social integration</h2>
+        <p>This <a src="https://github.com/ludei/atomic-plugins-social">repository</a> contains a native Share API designed using the Atomic Plugins paradigm. The API is already available in many languagues and we plan to add more in the future.</p>
+        <h3>Setup your project</h3>
+        <p>Releases are deployed to Cordova Plugin Registry. 
+        You only have to install the desired plugins using Cordova CLI, CocoonJS CLI or Cocoon.io Cloud Server.</p>
+        <ul>
+        <code>cordova plugin add com.ludei.social.ios.gamecenter;</code><br/>
+        <code>cordova plugin add com.ludei.social.android.googleplaygames;</code><br/>
+        <code>cordova plugin add com.ludei.social.ios.facebook;</code><br/>
+        <code>cordova plugin add com.ludei.social.android.facebook;</code><br/>
+        </ul>
+        <p>The following JavaScript files will be included in your html project by default during installation:</p>
+        <ul>
+        <li><a href="https://github.com/ludei/atomic-plugins-social/blob/master/src/js/cocoon_social.js">cocoon_social.js</a></li>
+        <li><a href="https://github.com/ludei/cocoon-common/blob/master/src/js/cocoon.js">cocoon.js</a></li>
+        </ul>
+        <h3>Documentation</h3>
+        <p>In this section you will find all the documentation you need for using this plugin in your Cordova project. 
+        Select the specific namespace below to open the relevant documentation section:</p>
+        <ul>
+        <li><a href="http://ludei.github.io/cocoon-common/dist/doc/js/Cocoon.html">Cocoon</a></li>
+        <li><a href="Cocoon.Social.html">Social</a></li>
+        </ul>
+        <h3>API Reference</h3>
+        <p>For a complete project that tests all the features provided in the API run the following command:</p>
+        <ul><code>gulp create-cordova</code></ul>
+        <br/><p>We hope you find everything you need to get going here, but if you stumble on any problems with the docs or the plugins, 
+        just drop us a line at our forum and we will do our best to help you out.</p>
+        <h3>Tools</h3>
+        <a href="http://support.ludei.com/hc/communities/public/topics"><img src="img/cocoon-tools-1.png" /></a>
+        <a href="https://cocoon.io/doc"><img src="img/cocoon-tools-2.png" /></a>
+        <a href="http://cocoon.io/"><img src="img/cocoon-tools-3.png" /></a>
+        * @version 1.0
+        */
 
     var Cocoon = window.Cocoon;
     if (!Cocoon && window.cordova && typeof require !== 'undefined') {
@@ -10,8 +49,8 @@
      * Each Social service has it's own official API but can also be used within this API interface.<br/>
      * Note that this javascript extension can be used to manage <b>Leaderboards and Achievements.</b> <br/>
      * In order to understand how to use the social javascript extension refer to the social service you would like to to use:
-     * - <a href="Cocoon.Social.Facebook.html">Facebook</a>
-     * - <a href="Cocoon.Social.GooglePlayGames.html">Google Play Games</a>
+     * - <a href="">Facebook</a>
+     * - <a href="">Google Play Games</a>
      * - <a href="Cocoon.Social.GameCenter.html">Game Center</a>
      * @namespace Cocoon.Social
      */
@@ -21,8 +60,8 @@
          * This interface provides an abstraction API for all the Social Services, this is an interface and never should be call directly.
          * Each Social service has it's own official API but can also be used within this API interface. In order to use this
          * interface you should call the method getSocialInterface(); that is available in the following classes:
-         * - <a href="Cocoon.Social.Facebook.html">Facebook</a>
-         * - <a href="Cocoon.Social.GooglePlayGames.html">Google Play Games</a>
+         * - <a href="">Facebook</a>
+         * - <a href="">Google Play Games</a>
          * - <a href="Cocoon.Social.GameCenter.html">Game Center</a>
          * @namespace Cocoon.Social.Interface
          * @example
@@ -265,7 +304,7 @@
              *       }
              *       else {
              *          console.log("You have " + friends.length + " friends.");
-             *        }
+             *       }
              *   });
              * }
              */
@@ -343,7 +382,7 @@
              *          if (error) {
              *              console.error("Error publishing message: " + error.message);
              *          }
-             *      });
+             *     });
              * }
              */
             publishMessageWithDialog: function(message, callback) {

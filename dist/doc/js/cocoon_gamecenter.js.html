@@ -57,7 +57,7 @@
 <div class="container-fluid">
 	<div class="navbar navbar-fixed-top navbar-inverse">
 		<div class="navbar-inner">
-			<a class="brand" href="index.html"><img src='img/logomini.png' style='width: 100px;height: 35px;'/> <span class='brand-adjust'>Cocoon Common JavaScript Documentation</span></a>
+			<a class="brand" href="index.html"><img src='img/logomini.png' style='width: 100px;height: 35px;'/> <span class='brand-adjust'>Social JavaScript Documentation</span></a>
 			<ul class="nav">
 				
 				<li class="dropdown">
@@ -105,21 +105,13 @@
         <article>
             <pre class="sunlight-highlight-javascript linenums">(function() {
 
-    var Cocoon = window.Cocoon;
-    if (!Cocoon &amp;&amp; window.cordova &amp;&amp; typeof require !== 'undefined') {
-        Cocoon = cordova.require('com.ludei.cocoon.common.Cocoon');
+    if (window.cordova &amp;&amp; typeof require !== 'undefined') {
+        cordova.require('com.ludei.social.common.Social'); //force dependency load
     }
+    var Cocoon = window.Cocoon;
 
     /**
-     * This namespace represents all the basic functionalities available in the CocoonJS extension API.
-     *
-     * &lt;div class="alert alert-success">
-     *   Here you will find a demo about this namespace: &lt;a href="https://github.com/ludei/cocoonjs-demos/tree/Multiplayer">Multiplayer demo&lt;/a>.
-     *&lt;/div>
-     *
-     * &lt;div class="alert alert-warning">
-     *    &lt;strong>Warning!&lt;/strong> This JavaScript extension requires some configuration parameters on the &lt;a href="https://ludei.zendesk.com/hc/en-us">cloud compiler&lt;/a>!
-     * &lt;/div>
+     * Cocoon Social Interface for the Game Center Extension.
      * @namespace Cocoon.Social.GameCenter
      */
     Cocoon.define("Cocoon.Social", function(extension) {
@@ -148,13 +140,6 @@
             },
 
             /**
-             * This namespace represents all the basic functionalities available in the CocoonJS extension API.
-             * &lt;div class="alert alert-warning">
-             *    &lt;strong>Warning!&lt;/strong> This JavaScript extension requires some configuration parameters on the &lt;a href="https://ludei.zendesk.com/hc/en-us">cloud compiler&lt;/a>!.
-             * &lt;/div>
-             */
-
-            /**
              * Returns a Cocoon Social Interface for the Game Center Extension.
              * You can use the Game Center extension in two ways, with 1:1 official API equivalent or with the CocoonJS API abstraction.
              * @function getSocialInterface
@@ -176,8 +161,7 @@
              * @returns {Cocoon.Multiplayer.MultiplayerService}
              */
             getMultiplayerInterface: function() {
-                //return Cocoon.Multiplayer.GameCenter;
-                return new Cocoon.Multiplayer.MultiplayerService('LDMultiplayerGameCenterPlugin');
+                return Cocoon.Multiplayer.GameCenter;
             },
 
             isLoggedIn: function() {
@@ -743,7 +727,7 @@
 					
 					
 		<span class="copyright">
-		Atomic Plugins Cocoon Common - JavaScript Documentation by Ludei, DocStrap Copyright © 2012-2013 <br/> The contributors to the JSDoc3 and DocStrap projects.
+		Atomic Plugins for Social - JavaScript Documentation by Ludei, DocStrap Copyright © 2012-2013 <br/> The contributors to the JSDoc3 and DocStrap projects.
 		</span>
 					<br />
 					
