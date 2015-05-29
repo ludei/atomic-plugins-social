@@ -110,7 +110,7 @@
         &lt;p>Atomic Plugins provide an elegant and minimalist API and are designed with portability in mind from the beginning. Framework dependencies are avoided by design so the plugins can run on any platform and can be integrated with any app framework or game engine.
         &lt;br/> &lt;p>You can contribute and help to create more awesome plugins. &lt;/p>
         &lt;h2>Atomic Plugins for Social integration&lt;/h2>
-        &lt;p>This &lt;a src="https://github.com/ludei/atomic-plugins-social">repository&lt;/a> contains a native Share API designed using the Atomic Plugins paradigm. The API is already available in many languagues and we plan to add more in the future.&lt;/p>
+        &lt;p>This &lt;a src="https://github.com/ludei/atomic-plugins-social">repository&lt;/a> contains a Social API designed using the Atomic Plugins paradigm. The API is already available in many languagues and we plan to add more in the future.&lt;/p>
         &lt;h3>Setup your project&lt;/h3>
         &lt;p>Releases are deployed to Cordova Plugin Registry. 
         You only have to install the desired plugins using Cordova CLI, CocoonJS CLI or Cocoon.io Cloud Server.&lt;/p>
@@ -969,19 +969,6 @@
             this.points = points || 0;
 
             return this;
-        };
-
-        /**
-         * Opens a given share native window to share some specific text content in
-         * any system specific social sharing options. For example, Twitter, Facebook, SMS, Mail, ...
-         * @memberOf Cocoon.Social
-         * @function Share
-         * @param textToShare {string} textToShare The text content that will be shared.
-         * @example
-         * Cocoon.Social.share("I have scored more points on Flappy Submarine!! Chooo choooo");
-         */
-        extension.share = function(textToShare) {
-            //TODO
         };
 
         return extension;
