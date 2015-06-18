@@ -27,11 +27,6 @@
         <li><a href="http://ludei.github.io/cocoon-common/dist/doc/js/Cocoon.html">Cocoon</a></li>
         <li><a href="Cocoon.Social.html">Social</a></li>
         </ul>
-        <h3>API Reference</h3>
-        <p>For a complete project that tests all the features provided in the API run the following command:</p>
-        <ul><code>gulp create-cordova</code></ul>
-        <br/><p>We hope you find everything you need to get going here, but if you stumble on any problems with the docs or the plugins, 
-        just drop us a line at our forum and we will do our best to help you out.</p>
         <h3>Tools</h3>
         <a href="http://support.ludei.com/hc/communities/public/topics"><img src="img/cocoon-tools-1.png" /></a>
         <a href="https://cocoon.io/doc"><img src="img/cocoon-tools-2.png" /></a>

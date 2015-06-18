@@ -1,111 +1,6 @@
-<!DOCTYPE html>
+(function() {
 
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>Atomic Plugins</title>
-
-	<!--[if lt IE 9]>
-	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
-	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
-	<script type="text/javascript">
-		if(window.location.pathname.indexOf("index.html") !== -1){
-			document.write('<style>  #toc { display:none; } </style>');
-		}
-	</script>
-	
-	<link type="text/css" rel="stylesheet" href="styles/site.spacelab.css">
-	
-	<style type="text/css">
-		.alert-warning {
-			background-color: #fcf8e3;
-			border-color: #faebcc;
-			color: #8a6d3b;
-		}
-		.alert {
-			padding: 15px;
-			margin-bottom: 20px;
-			border: 1px solid transparent;
-			border-radius: 4px;
-		}
-		.alert a{
-			color: #8a6d3b;
-			font-weight: bold;
-		}
-		.alert-success a {
-			color: #519251;
-			font-weight: bold;
-		}
-		.alert-success a:hover{
-			color: #519251;
-			text-decoration: underline;
-			font-weight: bold;
-		}
-		.alert-warning a:hover{
-			color: #8a6d3b;
-			text-decoration: underline;
-			font-weight: bold;
-		}
-		.page-title{
-			display: none;
-		}
-	</style>
-</head>
-
-<body>
-<div class="container-fluid">
-	<div class="navbar navbar-fixed-top navbar-inverse">
-		<div class="navbar-inner">
-			<a class="brand" href="index.html"><img src='img/logomini.png' style='width: 100px;height: 35px;'/> <span class='brand-adjust'>Social JavaScript Documentation</span></a>
-			<ul class="nav">
-				
-				<li class="dropdown">
-					<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b
-						class="caret"></b></a>
-
-					<ul class="dropdown-menu ">
-						
-						<li>
-							
-								<a href="Cocoon.Social.html">Social</a>
-							
-						</li>
-						
-						<li>
-							
-							
-						</li>
-						
-						<li>
-							
-							
-						</li>
-						
-
-					</ul>
-				</li>
-				
-			</ul>
-		</div>
-	</div>
-
-	<div class="row-fluid">
-
-		
-			<div class="span12">
-				
-				<div id="main">
-					
-
-
-		<h1 class="page-title">Source: cocoon_gamecenter.js</h1>
-    
-    <section>
-        <article>
-            <pre class="sunlight-highlight-javascript linenums">(function() {
-
-    if (window.cordova &amp;&amp; typeof require !== 'undefined') {
+    if (window.cordova && typeof require !== 'undefined') {
         cordova.require('com.ludei.social.common.Social'); //force dependency load
     }
     var Cocoon = window.Cocoon;
@@ -165,7 +60,7 @@
             },
 
             isLoggedIn: function() {
-                return this._currentPlayer &amp;&amp; this._currentPlayer.isAuthenticated;
+                return this._currentPlayer && this._currentPlayer.isAuthenticated;
             },
 
             /**
@@ -539,7 +434,7 @@
             this.gc = gcExtension;
             var me = this;
             this.gc.on("loginStatusChanged", function(localPlayer, error) {
-                me.onLoginStatusChanged.emit("loginStatusChanged", [localPlayer &amp;&amp; localPlayer.isAuthenticated, error]);
+                me.onLoginStatusChanged.emit("loginStatusChanged", [localPlayer && localPlayer.isAuthenticated, error]);
             });
         };
 
@@ -553,7 +448,7 @@
             login: function(callback) {
                 this.gc.login(function(localPlayer, error) {
                     if (callback)
-                        callback(localPlayer &amp;&amp; localPlayer.isAuthenticated, error);
+                        callback(localPlayer && localPlayer.isAuthenticated, error);
                 });
             },
             logout: function(callback) {
@@ -569,7 +464,7 @@
             requestUser: function(callback, userId) {
                 if (userId) {
                     this.gc.loadPlayers([userId], function(response, error) {
-                        var user = response &amp;&amp; response.length ? fromGCPLayerToCocoonUser(response[0]) : null;
+                        var user = response && response.length ? fromGCPLayerToCocoonUser(response[0]) : null;
                         callback(user, error);
                     });
                 } else {
@@ -582,8 +477,8 @@
             requestFriends: function(callback, userId) {
                 this.gc.loadFriends(function(friends, error) {
                     var users = [];
-                    if (friends &amp;&amp; friends.length) {
-                        for (var i = 0; i &lt; friends.length; ++i) {
+                    if (friends && friends.length) {
+                        for (var i = 0; i < friends.length; ++i) {
                             users.push(fromGCPLayerToCocoonUser(friends[i]));
                         }
                     }
@@ -599,9 +494,9 @@
 
                 this.gc.loadScores(function(response, error) {
                     var gcScore = null;
-                    if (options.userID &amp;&amp; response &amp;&amp; response.scores &amp;&amp; response.scores.length)
+                    if (options.userID && response && response.scores && response.scores.length)
                         gcScore = response.scores[0];
-                    else if (response &amp;&amp; response.localPlayerScore)
+                    else if (response && response.localPlayerScore)
                         gcScore = response.localPlayerScore;
                     var loadedScore = gcScore ? new Cocoon.Social.Score(gcScore.playerID, gcScore.value, "", "", gcScore.category, gcScore) : null;
                     callback(loadedScore, error);
@@ -636,8 +531,8 @@
                             callback([], error);
                         } else {
                             var achievements = [];
-                            if (response &amp;&amp; response.length) {
-                                for (var i = 0; i &lt; response.length; i++) {
+                            if (response && response.length) {
+                                for (var i = 0; i < response.length; i++) {
                                     achievements.push(fromGCAchievementDescription(response[i]));
                                 }
                             }
@@ -663,8 +558,8 @@
                     me.gc.loadAchievements(function(response, error) {
                         if (!error) {
                             var achievements = [];
-                            if (response &amp;&amp; response.length) {
-                                for (var i = 0; i &lt; response.length; i++) {
+                            if (response && response.length) {
+                                for (var i = 0; i < response.length; i++) {
                                     var ach = me.findAchievement(response[i].identifier);
                                     if (ach)
                                         achievements.push(ach);
@@ -712,88 +607,4 @@
         return extension;
     });
 
-})();</pre>
-        </article>
-    </section>
-
-
-
-
-
-				</div>
-
-				<div class="clearfix"></div>
-				<footer>
-					
-					
-		<span class="copyright">
-		Atomic Plugins for Social - JavaScript Documentation by Ludei, DocStrap Copyright © 2012-2013 <br/> The contributors to the JSDoc3 and DocStrap projects.
-		</span>
-					<br />
-					
-				</footer>
-			</div>
-
-			
-			<br clear="both">
-		</div>
-
-	</div>
-	<script src="scripts/sunlight.js"></script>
-	<script src="scripts/sunlight.javascript.js"></script>
-	<script src="scripts/sunlight-plugin.doclinks.js"></script>
-	<script src="scripts/sunlight-plugin.linenumbers.js"></script>
-	<script src="scripts/sunlight-plugin.menu.js"></script>
-	<script src="scripts/jquery.min.js"></script>
-	<script src="scripts/jquery.scrollTo.js"></script>
-	<script src="scripts/jquery.localScroll.js"></script>
-	<script src="scripts/bootstrap-dropdown.js"></script>
-	<script src="scripts/toc.js"></script>
-
-
-	<script>  Sunlight.highlightAll({lineNumbers:true,  showMenu: true, enableDoclinks :true}); </script>
-
-	<script>
-		$( function () {
-			$( "#toc" ).toc( {
-				selectors   : "h1,h2,h3,h4",
-				showAndHide : false,
-				scrollTo    : 60
-			} );
-			$( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
-			$( "#main span[id^='toc']" ).addClass( "toc-shim" );
-
-			var prefix = $(".toc-h2").text();
-			$($(".toc-h3").nextAll()).each(function(){
-
-				if($(this).attr("class") === "toc-h3")
-					return false;
-				// Mega ugly hack, ask karliky
-				// Replace the "<static>" word
-				var str = prefix + "." + $(this).text().toString().replace("<static> ","");
-				// Replace the "function(args)" string
-
-				str = str.replace(/ /g, "").replace(/\n/g, "");
-				str = str.split("(");
-				str = (str.length == 1) ? str.join("") : str[0] + "(" + ")";
-				$($($(this)[0]).children()[0]).text(str);
-			});
-			$(".toc-h4 a").each(function(){
-				var el 	= $(this);
-				var str = el.text().toString().replace("<static> ","");
-				
-				str = str.split("(");
-				str = (str.length == 1) ? str.join("") : str[0] + "(" + ")";
-				el.text(str);
-			});
-			$(".description p").each(function(){
-				var el = $(this);
-				el.html(el.text());
-			});
-		} );
-	</script>
-
-	
-
-</body>
-</html>
+})();
