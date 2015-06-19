@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="com.ludei.social.common" version="1.0.1">
+        id="com.ludei.social.common" version="1.0.2">
     <name>Cocoon Social Common</name>
     <description>Common utils for Cocoon Social Atomic Plugins</description>
     <license>MPL 2.0</license>
     <keywords>cordova,cocoon,atomic,plugins,cocoonjs,social</keywords>
 
      <js-module src="www/cocoon_social.js" name="Social">
-        <merges target="window.Cocoon.Social" />
+        <runs/>
     </js-module>
 
     <dependency id="com.ludei.cocoon.common" />

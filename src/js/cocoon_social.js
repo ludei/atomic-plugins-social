@@ -34,10 +34,10 @@
         * @version 1.0
         */
 
-    var Cocoon = window.Cocoon;
-    if (!Cocoon && window.cordova && typeof require !== 'undefined') {
-        Cocoon = cordova.require('com.ludei.cocoon.common.Cocoon');
+    if (!window.Cocoon && window.cordova && typeof require !== 'undefined') {
+        require('com.ludei.cocoon.common.Cocoon');
     }
+    var Cocoon = window.Cocoon;
 
     /**
      * This namespace provides an abstraction API for all the Social Services.
