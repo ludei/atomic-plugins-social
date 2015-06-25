@@ -39,7 +39,7 @@ Cocoon.Social class provides an easy to use Social API that can be used with dif
 Releases are deployed to Cordova Plugin Registry. You only have to install the desired plugins using Cordova CLI, CocoonJS CLI or Ludei's Cocoon.io Cloud Server.
 
     cordova plugin add com.ludei.social.ios.gamecenter;
-    cordova plugin add com.ludei.social.android.googleplaygames;
+    cordova plugin add com.ludei.social.android.googleplaygames --variable APP_ID=the_app_id;
     cordova plugin add com.ludei.social.ios.facebook;
     cordova plugin add com.ludei.social.android.facebook;
 

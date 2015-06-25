@@ -45,7 +45,7 @@
      * Note that this javascript extension can be used to manage <b>Leaderboards and Achievements.</b> <br/>
      * In order to understand how to use the social javascript extension refer to the social service you would like to to use:
      * - <a href="">Facebook</a>
-     * - <a href="">Google Play Games</a>
+     * - <a href="Cocoon.Social.GooglePlayGames.html">Google Play Games</a>
      * - <a href="Cocoon.Social.GameCenter.html">Game Center</a>
      * @namespace Cocoon.Social
      */
@@ -56,7 +56,7 @@
          * Each Social service has it's own official API but can also be used within this API interface. In order to use this
          * interface you should call the method getSocialInterface(); that is available in the following classes:
          * - <a href="">Facebook</a>
-         * - <a href="">Google Play Games</a>
+         * - <a href="Cocoon.Social.GooglePlayGames.html">Google Play Games</a>
          * - <a href="Cocoon.Social.GameCenter.html">Game Center</a>
          * @namespace Cocoon.Social.Interface
          * @example
@@ -83,10 +83,10 @@
          *           }
          *           else if (loggedIn) {
          *               var message = new Cocoon.Social.Message(
-         *                   "Hello from the CocoonJS Launcher App! Are you a HTML5 game developer? Come and check out CocoonJS!",
-         *                   "https://cocoonjsadmin.ludei.com/static/images/cocoon_logo.png",
-         *                   "http://ludei.com",
-         *                   "Ludei & CocoonJS",
+         *                   "Hello there! Are you a HTML5 game developer? Come and check out Cocoon.io!",
+         *                   "https://cocoon.io/assets2/images/layout/cordovainside.png",
+         *                   "http://cocoon.io",
+         *                   "Ludei & Cocoon.io",
          *                   "We love HTML5 games!");
          *
          *               socialService.publishMessageWithDialog(message, function(error) {
