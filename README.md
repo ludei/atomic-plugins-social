@@ -1,4 +1,3 @@
-
 Atomic Plugins for Social integration
 ========================================
 
@@ -50,7 +49,7 @@ The following JavaScript file is included automatically:
 And, depending on the social service used, also: 
 
 [`cocoon_gamecenter.js`](https://github.com/ludei/atomic-plugins-gamecenter/blob/master/src/js/cocoon_gamecenter.js)
-[`cocoon_googleplaygames.js`]()
+[`cocoon_googleplaygames.js`](https://github.com/ludei/atomic-plugins-googleplaygames/blob/master/src/js/cocoon_googleplaygames.js)
 [`cocoon_facebook.js`]()
 
 ###Example
