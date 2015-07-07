@@ -1,0 +1,28 @@
+{
+  "name": "cocoon-plugin-social-common",
+  "version": "1.0.0",
+  "description": "Common utils for Cocoon Social Atomic Plugins",
+  "cordova": {
+    "id": "cocoon-plugin-social-common",
+    "platforms": []
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ludei/atomic-plugins-social"
+  },
+  "keywords": [
+    "cordova",
+    "cocoon",
+    "atomic",
+    "plugins",
+    "cocoonjs",
+    "social",
+    "ecosystem:cordova"
+  ],
+  "author": "ludei",
+  "license": "MPL 2.0",
+  "bugs": {
+    "url": "https://github.com/ludei/atomic-plugins-social/issues"
+  },
+  "homepage": "https://github.com/ludei/atomic-plugins-social#readme"
+}

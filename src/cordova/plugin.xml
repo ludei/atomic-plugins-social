@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="com.ludei.social.common" version="1.0.3">
+        id="cocoon-plugin-social-common" version="1.0.0">
     <name>Cocoon Social Common</name>
     <description>Common utils for Cocoon Social Atomic Plugins</description>
     <license>MPL 2.0</license>
@@ -10,6 +10,6 @@
         <runs/>
     </js-module>
 
-    <dependency id="com.ludei.cocoon.common" />
+    <dependency id="cocoon-plugin-common" />
 
 </plugin>
