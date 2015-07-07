@@ -14,7 +14,7 @@
     "url": "ssh://git@bitbucket.org/ludei/cocoon-common.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MPL 2.0",
   "devDependencies": {
     "gulp": "^3.8.10",
     "gulp-concat": "^2.5.2",

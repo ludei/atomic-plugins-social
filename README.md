@@ -31,16 +31,14 @@ See [API Documentation](http://ludei.github.io/cocoon-common/dist/doc/js/Cocoon.
 
 ###Introduction 
 
-Cocoon.Social class provides an easy to use Social API that can be used with different Social Services: Facebook, GooglePlay games and GameCenter.
+Cocoon.Social class provides an easy to use Social API that can be used with different Social Services: GooglePlay games and GameCenter.
 
 ###Setup your project
 
 Releases are deployed to Cordova Plugin Registry. You only have to install the desired plugins using Cordova CLI, CocoonJS CLI or Ludei's Cocoon.io Cloud Server.
 
-    cordova plugin add com.ludei.social.ios.gamecenter;
-    cordova plugin add com.ludei.social.android.googleplaygames --variable APP_ID=the_app_id;
-    cordova plugin add com.ludei.social.ios.facebook;
-    cordova plugin add com.ludei.social.android.facebook;
+    cordova plugin add cocoon-plugin-social-ios-gamecenter;
+    cordova plugin add cocoon-plugin-social-android-googleplaygames --variable APP_ID=the_app_id;
 
 The following JavaScript file is included automatically:
 
