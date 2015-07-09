@@ -1,6 +1,6 @@
 {
   "name": "cocoon-plugin-social-common",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Common utils for Cocoon Social Atomic Plugins",
   "cordova": {
     "id": "cocoon-plugin-social-common",
