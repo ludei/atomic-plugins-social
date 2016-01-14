@@ -120,6 +120,8 @@
     &lt;li>&lt;a href="http://ludei.github.io/atomic-plugins-docs/dist/doc/js/Cocoon.Social.GooglePlayGames.html">Google Play Games&lt;/a>&lt;/li>
     &lt;li>&lt;a href="http://ludei.github.io/atomic-plugins-docs/dist/doc/js/Cocoon.Social.GameCenter.html">Game Center&lt;/a>&lt;/li>
     &lt;/ul>
+    &lt;h3>Full example&lt;/h3>
+    See a full example here: &lt;a href="https://github.com/CocoonIO/cocoon-sample-facebook"/>Facebook demo&lt;/a>
     * @version 1.0
     */
 
@@ -192,6 +194,17 @@
          * }
          * loginFacebook();
          */
+
+        /**
+        * Triggered when the user's login status has changed.
+        * @memberOf Cocoon.Social.Interface
+        * @event On loginStatusChanged
+        * @example
+        * socialAPI.on("loginStatusChanged", function(loggedIn){
+        *    console.log("User logged in?: " + loggedIn);
+        * });
+        */         
+
         extension.Interface = function() {
 
             this.onLoginStatusChanged = new Cocoon.Signal();
